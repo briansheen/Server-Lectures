@@ -22,6 +22,13 @@ public class PersonDaoImpl implements PersonDao {
     JdbcTemplate jdbcTemplate;
 
     @Override
+    public void add(List<Person> persons) {
+        for (Person person : persons) {
+            this.add(person);
+        }
+    }
+
+    @Override
     public void add(Person person) {
         log.info("adding " + person);
         jdbcTemplate.update("INSERT INTO person(name, dob, gender) VALUES (?,?,?)",

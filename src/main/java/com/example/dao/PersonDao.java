@@ -7,4 +7,5 @@ import com.example.domain.Person;
 public interface PersonDao {
     void add(Person person);
     List<Person> find();
+    void add(List<Person> persons);
 }
