@@ -26,7 +26,8 @@ public class PersonDaoImpl implements PersonDao {
         log.info("adding " + person);
         jdbcTemplate.update("INSERT INTO person(name, dob, gender) VALUES (?,?,?)",
                 person.getName(),
-                person.getDob(),
+//                person.getDob(),
+                new java.util.Date(),
                 person.getGender());
     }
 
